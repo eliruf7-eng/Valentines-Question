@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #noBtn {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine when I come to you?</h1>
+
+    <div id="container">
+        <button id="yesBtn" onclick="alert('Yay! ❤️')">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const container = document.getElementById("container");
+
+        noBtn.addEventListener("mouseover", () => {
+            const maxX = container.clientWidth - noBtn.clientWidth;
+            const maxY = container.clientHeight - noBtn.clientHeight;
+
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+
+            noBtn.style.left = newX + "px";
+            noBtn.style.top = newY + "px";
+        });
+    </script>
+
+</body>
+</html>
